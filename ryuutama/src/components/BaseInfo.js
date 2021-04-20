@@ -26,7 +26,7 @@ function BaseInfo({ setClass1, setClass2, setType1, setType2 }) {
         <select name="gender selection">
           <option value="male">Male</option>
           <option value="female">Female</option>
-          <option value="female">Other</option>
+          <option value="other">Other</option>
         </select>
 
         <span>
