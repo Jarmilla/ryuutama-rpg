@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import ClassChooser from "./ClassChooser";
-import TypeChooser from "./TypeChooser";
+import BaseInfo from "./BaseInfo";
+import ClassSkills from "./ClassSkills";
+import DiceSection from "./DiceSection";
 
 function RyuutamaCharacterSheet() {
   const [class1, setClass1] = useState();
@@ -10,63 +11,8 @@ function RyuutamaCharacterSheet() {
 
   return (
     <form>
-      {/* BaseInfo.js */}
-      <div className="character-sheet">
-        <div className="character-rows">
-          <div>
-            Character name: <input required type="text" />
-          </div>
-          <div>
-            Player name: <input required type="text" />
-          </div>
-        </div>
-
-        <div className="character-rows">
-          <div>
-            <span>
-              Level: <input type="number" />
-            </span>
-            <span>
-              EXP: <input type="number" />
-            </span>
-          </div>
-
-          <div>
-            <span>Sex: </span>
-            <select name="gender selection">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-
-            <span>
-              Age: <input required type="text" />
-            </span>
-          </div>
-        </div>
-
-        <div className="character-rows">
-          <div>
-            Class:
-            <ClassChooser setClass={setClass1} onChange={console.log(class1)} /> / <ClassChooser setClass={setClass2} />
-          </div>
-          <div>
-            Type:
-            <TypeChooser setType={setType1} /> / <TypeChooser setType={setType2} />
-          </div>
-        </div>
-      </div>
-
-      {/* ClassSkills.js */}
-      <div className="character-sheet">
-        <div className="character-rows">
-          <div>Class Skill</div>
-          <div>Stats Used</div>
-          <div>Effect</div>
-        </div>
-        <span>3 class1 skill, 3 class2 skill generálás</span>
-      </div>
-
+      <BaseInfo setClass1={setClass1} setClass2={setClass2} setType1={setType1} setType2={setType2} onChange={console.log(class1, class2, type1, type2)} />
+      <ClassSkills setClass1={setClass1} setClass2={setClass2} /> {/*hiányoznak belőle az adatok és azoknak a mapelésük*/}
       {/* PersonalGoals.js */}
       <div className="character-sheet">
         <div className="character-rows">
@@ -79,28 +25,7 @@ function RyuutamaCharacterSheet() {
           <input required type="text" />
         </div>
       </div>
-
-      {/* DiceSection.js */}
-      <div className="character-sheet">
-        <div className="character-rows">
-          <div>Status</div>
-
-          <div className="character-rows">
-            <div>
-              <div>Str props4x</div>
-              <div>
-                d
-                <select name="dice">
-                  <option value="4">4</option>
-                  <option value="6">6</option>
-                  <option value="8">8</option>
-                </select>
-              </div>
-            </div>
-            <div>pictogram</div>
-          </div>
-        </div>
-      </div>
+      <DiceSection />
     </form>
   );
 }
