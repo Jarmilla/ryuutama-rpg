@@ -1,17 +1,12 @@
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import title from "./img/title.png";
-import BaseInfo from "./components/BaseInfo";
+import RyuutamaCharacterSheet from "./components/RyuutamaCharacterSheet";
 
 function App() {
-  const [class1, setClass1] = useState(null);
-  const [class2, setClass2] = useState(null);
-  const [type1, setType1] = useState(null);
-  const [type2, setType2] = useState(null);
-
   return (
     <div className="App">
-      <header>
+      <header className="character-rows">
         <div>
           <img src={title} alt="Ryuutama" />
           <h3>Charcter Sheet</h3>
@@ -20,11 +15,10 @@ function App() {
           <span>Created</span>
           <input type="date" />
         </div>
-        <div></div>
+        <div>image here</div>
       </header>
-      <div className="character-sheet">
-        <BaseInfo setClass1={setClass1} setClass2={setClass2} setType1={setType1} setType2={setType2} onChange={console.log(class1, class2, type1, type2)} />
-      </div>
+
+      <RyuutamaCharacterSheet />
     </div>
   );
 }
