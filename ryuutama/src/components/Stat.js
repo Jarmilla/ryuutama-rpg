@@ -4,7 +4,7 @@ function Stat({ statName, icon }) {
   return (
     <div className="character-rows">
       <div>
-        <div>{statName}</div>
+        <div>{statName.toUpperCase()}</div>
         <div>
           d
           <select name="dice">

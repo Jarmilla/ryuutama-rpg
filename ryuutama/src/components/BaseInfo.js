@@ -2,7 +2,7 @@ import React from "react";
 import ClassChooser from "./ClassChooser";
 import TypeChooser from "./TypeChooser";
 
-function BaseInfo({ setClass1, setClass2, setType1, setType2 }) {
+function BaseInfo({ setClass1, setType1 }) {
   return (
     <div className="character-sheet">
       <div className="character-rows">
@@ -41,11 +41,11 @@ function BaseInfo({ setClass1, setClass2, setType1, setType2 }) {
       <div className="character-rows">
         <div>
           Class:
-          <ClassChooser setClass={setClass1} /> / <ClassChooser setClass={setClass2} />
+          <ClassChooser setClass={setClass1} /> / <span>2nd Class</span>
         </div>
         <div>
           Type:
-          <TypeChooser setType={setType1} /> / <TypeChooser setType={setType2} />
+          <TypeChooser setType={setType1} /> / <span>2nd Type</span>
         </div>
       </div>
     </div>
