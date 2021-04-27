@@ -21,6 +21,10 @@ body {
   padding: 1rem;
 }
 
+.class-image-container img {
+  width: 80%;
+}
+
 .character-rows {
   display: flex;
   justify-content: center;
@@ -31,9 +35,6 @@ body {
   width: 4rem;
 }
 
-.class-image-container img {
-  width: 80%;
-}
 .hp-cols {
   display: flex;
   flex-direction: column;
@@ -43,4 +44,8 @@ body {
   color: white;
   background-color: black;
   flex-grow: 4;
+}
+
+.incorrect-datas {
+  color: red;
 }

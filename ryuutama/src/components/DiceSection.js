@@ -21,6 +21,7 @@ function DiceSection() {
         <Stat statName="dex" icon={dexIcon} stat={setDex} />
         <Stat statName="int" icon={intIcon} stat={setInt} />
         <Stat statName="spt" icon={sptIcon} stat={setSpt} />
+        <div className="incorrect-datas"></div>
       </div>
 
       <div className="character-rows">

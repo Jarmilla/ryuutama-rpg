@@ -4,8 +4,8 @@ function TypeChooser({ setType }) {
   const types = ["Attack", "Technical", "Magic"];
   return (
     <select name="type-selector">
-      {types.map((type, key) => (
-        <option key={key} value={type} onClick={(e) => setType(e.target.value)}>
+      {types.map((type) => (
+        <option key={type} value={type} onClick={(e) => setType(e.target.value)}>
           {type}
         </option>
       ))}

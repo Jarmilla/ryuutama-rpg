@@ -12,7 +12,7 @@ function RyuutamaCharacterSheet() {
     <div>
       <Header class1={class1} />
       <form>
-        <BaseInfo setClass1={setClass1} setType1={setType1} onChange={console.log(class1, type1)} />
+        <BaseInfo setClass1={setClass1} setType1={setType1} type1={type1} onChange={console.log(class1, type1)} />
         <ClassSkills setClass1={setClass1} /> {/*hiányoznak belőle az adatok és azoknak a mapelésük*/}
         {/* PersonalGoals.js */}
         <div className="character-sheet">

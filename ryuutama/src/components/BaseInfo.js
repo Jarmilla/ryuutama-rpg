@@ -1,8 +1,16 @@
 import React from "react";
 import ClassChooser from "./ClassChooser";
 import TypeChooser from "./TypeChooser";
+import typeAttack from "../img/type attack.png";
+import typeTechnical from "../img/type technical.png";
+import typeMagic from "../img/type magic.png";
 
-function BaseInfo({ setClass1, setType1 }) {
+function BaseInfo({ setClass1, type1, setType1 }) {
+  const typeInfo = {
+    Attack: { description: "This type specializes in combat and using weapons.", img: typeAttack },
+    Technical: { description: "This type can quickly assess a situation and find clever ways to solve problems.", img: typeTechnical },
+    Magic: { description: "This type enables the use of various types of magic.", img: typeMagic },
+  };
   return (
     <div className="character-sheet">
       <div className="character-rows">
@@ -47,6 +55,10 @@ function BaseInfo({ setClass1, setType1 }) {
           Type:
           <TypeChooser setType={setType1} /> / <span>2nd Type</span>
         </div>
+      </div>
+      <div className="character-rows">
+        <img src={typeInfo[type1].img} alt={type1} />
+        <div>{typeInfo[type1].description}</div>
       </div>
     </div>
   );
