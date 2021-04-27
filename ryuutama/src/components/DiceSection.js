@@ -15,15 +15,25 @@ function DiceSection() {
   return (
     <div className="character-sheet">
       <div className="character-rows">
-        <div>Status</div>
+        <div>Stats</div>
 
         <Stat statName="str" icon={strIcon} stat={setStr} />
         <Stat statName="dex" icon={dexIcon} stat={setDex} />
         <Stat statName="int" icon={intIcon} stat={setInt} />
         <Stat statName="spt" icon={sptIcon} stat={setSpt} />
-        <div className="incorrect-datas"></div>
       </div>
-
+      {console.log(typeof str)}
+      {parseInt(str) + parseInt(dex) + parseInt(int) + parseInt(spt) !== 24 ? (
+        <div className="incorrect-datas">
+          <p>
+            Choose one of the following three sets of numbers and arrange them as you like between Strength [STR], Dexterity [DEX], Intelligence [INT], and
+            Spirit [SPI]:
+          </p>
+          <p>Average Set: 6 6 6 6 Standard Set: 4 6 6 8 Specialized Set: 4 4 8 8</p>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="character-rows">
         <div className="character-rows">
           <div>HP</div>

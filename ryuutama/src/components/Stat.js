@@ -7,6 +7,7 @@ function Stat({ statName, icon, stat }) {
         <div>{statName.toUpperCase()}</div>
         <div>
           <select name="dice" onClick={(e) => stat(e.target.value)}>
+            <option value="0">-</option>
             <option value="4">4</option>
             <option value="6">6</option>
             <option value="8">8</option>
