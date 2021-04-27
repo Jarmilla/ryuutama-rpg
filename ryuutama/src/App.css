@@ -30,3 +30,17 @@ body {
 .character-rows img {
   width: 4rem;
 }
+
+.class-image-container img {
+  width: 80%;
+}
+.hp-cols {
+  display: flex;
+  flex-direction: column;
+}
+
+.black-highlight {
+  color: white;
+  background-color: black;
+  flex-grow: 4;
+}

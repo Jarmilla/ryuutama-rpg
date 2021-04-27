@@ -29,7 +29,7 @@ function Header({ class1 }) {
         <span>Created</span>
         <input type="date" />
       </div>
-      <div>
+      <div className="class-image-container">
         {" "}
         <img src={imageChooser[class1]} alt={class1} />
       </div>
