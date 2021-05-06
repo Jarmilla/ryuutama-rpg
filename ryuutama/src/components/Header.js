@@ -21,7 +21,7 @@ function Header({ class1 }) {
 
   return (
     <header className="character-rows">
-      <div>
+      <div className="image-container">
         <img src={title} alt="Ryuutama" />
         <h3>Charcter Sheet</h3>
         <span>Ryubito</span>
@@ -29,7 +29,7 @@ function Header({ class1 }) {
         <span>Created</span>
         <input type="date" />
       </div>
-      <div className="class-image-container">
+      <div className="image-container">
         {" "}
         <img src={imageChooser[class1]} alt={class1} />
       </div>

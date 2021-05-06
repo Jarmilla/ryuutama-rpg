@@ -14,7 +14,7 @@ function RyuutamaCharacterSheet() {
       <form>
         <BaseInfo setClass1={setClass1} setType1={setType1} type1={type1} onChange={console.log(class1, type1)} />
         <ClassSkills setClass1={setClass1} /> {/*hiányoznak belőle az adatok és azoknak a mapelésük*/}
-        {/* PersonalGoals.js */}
+        {/* PersonalGoals.js ?*/}
         <div className="character-sheet">
           <div className="character-rows">
             <div>Reason to travel:</div>

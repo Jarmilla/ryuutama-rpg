@@ -21,14 +21,22 @@ body {
   padding: 1rem;
 }
 
-.class-image-container img {
-  width: 80%;
+.character-main-rows {
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .character-rows {
   display: flex;
   justify-content: center;
   gap: 1rem;
+
+  .image-container img {
+    width: 80%;
+  }
+
   img {
     width: 4rem;
   }

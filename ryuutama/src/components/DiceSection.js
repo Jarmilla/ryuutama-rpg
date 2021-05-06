@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Stat from "./Stat";
+import RollCheck from "./RollCheck";
 
 import strIcon from "../img/str.png";
 import dexIcon from "../img/dex.png";
@@ -7,7 +8,6 @@ import intIcon from "../img/int.png";
 import sptIcon from "../img/spt.png";
 import hp from "../img/hp.png";
 import mana from "../img/mana.png";
-import condtition from "../img/condition.png";
 import fumbles from "../img/fumbles.png";
 
 function DiceSection() {
@@ -15,9 +15,11 @@ function DiceSection() {
   const [dex, setDex] = useState(null);
   const [int, setInt] = useState(null);
   const [spt, setSpt] = useState(null);
+  const [fumble, setFumble] = useState(0);
+
   return (
     <div className="character-sheet">
-      <div className="character-rows">
+      <div className="character-main-rows">
         <div>Stats</div>
 
         <Stat statName="str" icon={strIcon} stat={setStr} />
@@ -36,7 +38,7 @@ function DiceSection() {
         ""
       )}
 
-      <div className="character-rows">
+      <div className="character-main-rows">
         <div className="character-rows">
           <div>HP</div>
           <div className="character-cols">
@@ -60,58 +62,30 @@ function DiceSection() {
         </div>
       </div>
 
-      <div className="character-rows">
-        <div className="character-rows">
-          <div className="character-cols">
-            <div>Traveling Rules</div>
+      <div className="character-main-rows">
+        <RollCheck checkTitle={"Condition [STR + SPT] * If over 10, add 1 dice size to any 1 stat"} dice1={str} dice2={dex} />
+      </div>
 
-            <div className="character-rows">
-              <p>1. Movement Check [STR + DEX]</p>
-              <button>Roll</button>
-              <h3>23</h3>
-            </div>
-
-            <div className="character-rows">
-              <p>2. Direction Check [INT + INT]</p>
-              <button>Roll</button>
-              <h3>23</h3>
-            </div>
-
-            <div className="character-rows">
-              <p>3. Camp Check [DEX + INT]</p>
-              <button>Roll</button>
-              <h3>23</h3>
-            </div>
-            {/* kiszervervezhetőek */}
-          </div>
+      <div className="character-main-rows">
+        <div className="character-cols">
+          <div>Traveling Rules</div>
+          <RollCheck checkTitle={"1. Movement Check [STR + DEX]"} dice1={str} dice2={dex} />
+          <RollCheck checkTitle={"2. Direction Check [INT + INT]"} dice1={int} dice2={int} />
+          <RollCheck checkTitle={"3. Camp Check [DEX + INT]"} dice1={dex} dice2={int} />
         </div>
 
-        <div className="character-rows">
-          <div className="character-cols">
-            <div className="character-rows">
-              <p>Condition [STR + SPT]</p>
-              <img src={condtition} alt="condtition" /> {}
-              <button>Roll</button>
-              <h3>23</h3>
-            </div>
-            <p className="character-rows">* If over 10, add 1 dice size to any 1 stat</p>
-
-            <div className="character-rows">
-              <p>Initiative [DEX + INT]</p>
-              <button>Roll</button>
-              <h3>23</h3>
-            </div>
-            {/* kiszervervezhető */}
-
-            <div className="character-rows">
-              <p>Fumble Points</p>
-              <img src={fumbles} alt="fumbles" /> {}
-              <button>+</button>
-              <h3>0</h3>
-              {/*   <input type="number" /> */}
-              <button>-</button>
-            </div>
+        <div className="character-cols">
+          <div>Special Rolls</div>
+          <div className="character-rows">
+            <p>Fumble Points</p>
+            <img src={fumbles} alt="fumbles" /> {}
+            <button onClick={() => setFumble(fumble + 1)}>+</button>
+            <h3>{fumble}</h3>
+            <button onClick={() => setFumble(fumble - 1)}>-</button>
           </div>
+
+          <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} />
+          <RollCheck checkTitle={"Other Rolls"} />
         </div>
       </div>
     </div>

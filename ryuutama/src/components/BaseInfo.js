@@ -58,7 +58,7 @@ function BaseInfo({ setClass1, type1, setType1 }) {
       </div>
       <div className="character-rows">
         <img src={type1 && typeInfo[type1].img} alt={type1} />
-        <div>{type1 && typeInfo[type1].description}</div>
+        <p>{type1 && typeInfo[type1].description}</p>
       </div>
     </div>
   );
