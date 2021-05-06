@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Stat from "./Stat";
 import RollCheck from "./RollCheck";
+import OtherRoll from "./OtherRoll";
 
 import strIcon from "../img/str.png";
 import dexIcon from "../img/dex.png";
@@ -85,7 +86,7 @@ function DiceSection() {
           </div>
 
           <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} />
-          <RollCheck checkTitle={"Other Rolls"} />
+          <OtherRoll str={str} dex={dex} int={int} spt={spt} />
         </div>
       </div>
     </div>
