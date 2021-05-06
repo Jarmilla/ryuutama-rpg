@@ -29,13 +29,12 @@ body {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  img {
+    width: 4rem;
+  }
 }
 
-.character-rows img {
-  width: 4rem;
-}
-
-.hp-cols {
+.character-cols {
   display: flex;
   flex-direction: column;
 }
@@ -46,6 +45,8 @@ body {
   flex-grow: 4;
 }
 
-.incorrect-datas {
-  color: red;
+.incorrect-datas p {
+  color: rgb(216, 0, 0);
+  font-size: 0.9rem;
+  margin: 0;
 }
