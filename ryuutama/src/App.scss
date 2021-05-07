@@ -37,8 +37,12 @@ body {
 .character-rows {
   display: flex;
   justify-content: center;
+  align-content: space-around;
   gap: 1rem;
   width: 100%;
+  p {
+    margin: 0.6rem 0;
+  }
   .image-container img {
     width: 80%;
   }
