@@ -1,48 +1,36 @@
 import React from "react";
 import ClassChooser from "./ClassChooser";
 import TypeChooser from "./TypeChooser";
-import typeAttack from "../img/type attack.png";
-import typeTechnical from "../img/type technical.png";
-import typeMagic from "../img/type magic.png";
+import typeInfo from "../datas/typeInfo";
 
 function BaseInfo({ setClass1, type1, setType1 }) {
-  const typeInfo = {
-    Attack: { description: "This type specializes in combat and using weapons.", img: typeAttack },
-    Technical: { description: "This type can quickly assess a situation and find clever ways to solve problems.", img: typeTechnical },
-    Magic: { description: "This type enables the use of various types of magic.", img: typeMagic },
-  };
   return (
     <div className="character-sheet">
-      <div className="character-rows">
-        <div>
-          Character name: <input required type="text" />
-        </div>
-        <div>
-          Player name: <input required type="text" />
+      <div className="character-main-rows">
+        <div className="character-rows">
+          <p> Character name: </p>
+          <input required type="text" />
+          <p>Player name: </p>
+          <input required type="text" />
         </div>
       </div>
 
-      <div className="character-rows">
-        <div>
-          <span>
-            Level: <input type="number" />
-          </span>
-          <span>
-            EXP: <input type="number" />
-          </span>
-        </div>
+      <div className="character-main-rows">
+        <div className="character-rows">
+          <p>Level:</p>
+          <input type="number" />
+          <p>EXP: </p>
+          <input type="number" />
 
-        <div>
-          <span>Sex: </span>
+          <p>Sex: </p>
           <select name="gender selection">
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
           </select>
 
-          <span>
-            Age: <input required type="text" />
-          </span>
+          <p>Age: </p>
+          <input required type="text" />
         </div>
       </div>
 
@@ -56,10 +44,17 @@ function BaseInfo({ setClass1, type1, setType1 }) {
           <TypeChooser setType={setType1} /> / <span>2nd Type</span>
         </div>
       </div>
-      <div className="character-rows">
-        <img src={type1 && typeInfo[type1].img} alt={type1} />
-        <p>{type1 && typeInfo[type1].description}</p>
-      </div>
+      {type1 && (
+        <div className="character-main-cols">
+          <div className="character-rows">
+            <img src={type1 && typeInfo[type1].img} alt={type1} />
+            <p>{type1 && typeInfo[type1].description}</p>
+          </div>
+          <div className="character-rows">
+            <ul>{type1 && typeInfo[type1].extras.map((extra) => <li>{extra}</li>)}</ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -10,7 +10,7 @@ body {
   background-color: antiquewhite;
   font-family: "Texturina", serif;
   line-height: 2rem;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -22,17 +22,23 @@ body {
 }
 
 .character-main-rows {
-  border: 1px black solid;
+  border: 1px black solid; //elhagyható
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.character-main-cols {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .character-rows {
   display: flex;
   justify-content: center;
   gap: 1rem;
-
+  width: 100%;
   .image-container img {
     width: 80%;
   }
@@ -45,6 +51,7 @@ body {
 .character-cols {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .black-highlight {

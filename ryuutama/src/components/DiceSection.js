@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Stat from "./Stat";
+import RollCondition from "./RollCondition";
 import RollCheck from "./RollCheck";
 import OtherRoll from "./OtherRoll";
 
@@ -16,6 +17,7 @@ function DiceSection() {
   const [dex, setDex] = useState(null);
   const [int, setInt] = useState(null);
   const [spt, setSpt] = useState(null);
+  const [condition, setCondition] = useState(null);
   const [fumble, setFumble] = useState(0);
 
   return (
@@ -23,10 +25,10 @@ function DiceSection() {
       <div className="character-main-rows">
         <div>Stats</div>
 
-        <Stat statName="str" icon={strIcon} stat={setStr} />
-        <Stat statName="dex" icon={dexIcon} stat={setDex} />
-        <Stat statName="int" icon={intIcon} stat={setInt} />
-        <Stat statName="spt" icon={sptIcon} stat={setSpt} />
+        <Stat statName="str" icon={strIcon} stat={setStr} condition={condition} />
+        <Stat statName="dex" icon={dexIcon} stat={setDex} condition={condition} />
+        <Stat statName="int" icon={intIcon} stat={setInt} condition={condition} />
+        <Stat statName="spt" icon={sptIcon} stat={setSpt} condition={condition} />
         {/* ? info about which stat represent what -page 30 in eng pdf
         Carrying Capacity [STR] +3 */}
       </div>
@@ -64,15 +66,22 @@ function DiceSection() {
       </div>
 
       <div className="character-main-rows">
-        <RollCheck checkTitle={"Condition [STR + SPT] * If over 10, add 1 dice size to any 1 stat"} dice1={str} dice2={dex} />
+        <RollCondition
+          checkTitle={"Condition [STR + SPT] * If over 10, add 1 dice size to any 1 stat"}
+          dice1={str}
+          dice2={dex}
+          condition={condition}
+          setCondition={setCondition}
+          setFumble={setFumble}
+        />
       </div>
 
       <div className="character-main-rows">
         <div className="character-cols">
           <div>Traveling Rules</div>
-          <RollCheck checkTitle={"1. Movement Check [STR + DEX]"} dice1={str} dice2={dex} />
-          <RollCheck checkTitle={"2. Direction Check [INT + INT]"} dice1={int} dice2={int} />
-          <RollCheck checkTitle={"3. Camp Check [DEX + INT]"} dice1={dex} dice2={int} />
+          <RollCheck checkTitle={"1. Movement Check [STR + DEX]"} dice1={str} dice2={dex} setFumble={setFumble} />
+          <RollCheck checkTitle={"2. Direction Check [INT + INT]"} dice1={int} dice2={int} setFumble={setFumble} />
+          <RollCheck checkTitle={"3. Camp Check [DEX + INT]"} dice1={dex} dice2={int} setFumble={setFumble} />
         </div>
 
         <div className="character-cols">
@@ -84,9 +93,8 @@ function DiceSection() {
             <h3>{fumble}</h3>
             <button onClick={() => setFumble(fumble - 1)}>-</button>
           </div>
-
-          <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} />
-          <OtherRoll str={str} dex={dex} int={int} spt={spt} />
+          <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} setFumble={setFumble} />
+          <OtherRoll str={str} dex={dex} int={int} spt={spt} fumble={fumble} setFumble={setFumble} />
         </div>
       </div>
     </div>
