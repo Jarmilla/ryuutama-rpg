@@ -4,31 +4,22 @@ import RollCondition from "./RollCondition";
 import RollCheck from "./RollCheck";
 import OtherRoll from "./OtherRoll";
 
-import strIcon from "../img/str.png";
-import dexIcon from "../img/dex.png";
-import intIcon from "../img/int.png";
-import sptIcon from "../img/spt.png";
 import hp from "../img/hp.png";
 import mana from "../img/mana.png";
 import fumbles from "../img/fumbles.png";
 
-function DiceSection() {
-  const [str, setStr] = useState(null);
-  const [dex, setDex] = useState(null);
-  const [int, setInt] = useState(null);
-  const [spt, setSpt] = useState(null);
+function DiceSection({ str, setStr, dex, setDex, int, setInt, spt, setSpt, fumble, setFumble }) {
   const [condition, setCondition] = useState(null);
-  const [fumble, setFumble] = useState(0);
 
   return (
     <div className="character-sheet">
       <div className="character-main-rows">
         <div>Stats</div>
 
-        <Stat statName="str" icon={strIcon} stat={setStr} condition={condition} />
-        <Stat statName="dex" icon={dexIcon} stat={setDex} condition={condition} />
-        <Stat statName="int" icon={intIcon} stat={setInt} condition={condition} />
-        <Stat statName="spt" icon={sptIcon} stat={setSpt} condition={condition} />
+        <Stat statName="str" setStat={setStr} condition={condition} />
+        <Stat statName="dex" setStat={setDex} condition={condition} />
+        <Stat statName="int" setStat={setInt} condition={condition} />
+        <Stat statName="spt" setStat={setSpt} condition={condition} />
         {/* ? info about which stat represent what -page 30 in eng pdf
         Carrying Capacity [STR] +3 */}
       </div>
@@ -86,6 +77,7 @@ function DiceSection() {
 
         <div className="character-cols">
           <div>Special Rolls</div>
+
           <div className="character-rows">
             <p>Fumble Points</p>
             <img src={fumbles} alt="fumbles" /> {}
@@ -93,7 +85,9 @@ function DiceSection() {
             <h3>{fumble}</h3>
             <button onClick={() => setFumble(fumble - 1)}>-</button>
           </div>
+
           <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} setFumble={setFumble} />
+
           <OtherRoll str={str} dex={dex} int={int} spt={spt} fumble={fumble} setFumble={setFumble} />
         </div>
       </div>

@@ -8,7 +8,7 @@ function OtherRoll({ str, dex, int, spt, fumble, setFumble }) {
 
   useEffect(
     (fumble, setFumble) => {
-      if (result === 6) setFumble(fumble + 1);
+      if (result === 6) setFumble(fumble + 1); //finals: result === 2
     },
     [result]
   );

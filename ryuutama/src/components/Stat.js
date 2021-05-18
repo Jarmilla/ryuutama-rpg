@@ -1,12 +1,24 @@
 import React from "react";
+import passTargetValueTo from "../utility/passTargetValueTo";
+import strIcon from "../img/str.png";
+import dexIcon from "../img/dex.png";
+import intIcon from "../img/int.png";
+import sptIcon from "../img/spt.png";
 
-function Stat({ statName, icon, stat, condition }) {
+const statImage = {
+  str: strIcon,
+  dex: dexIcon,
+  int: intIcon,
+  spt: sptIcon,
+};
+
+function Stat({ statName, setStat, condition }) {
   return (
     <div className="character-rows">
       <div>
         <div>{statName.toUpperCase()}</div>
         <div>
-          <select name="dice" onClick={(e) => stat(e.target.value)}>
+          <select name="dice" onClick={passTargetValueTo(setStat)}>
             <option value="0">-</option>
             <option value="4">4</option>
             <option value="6">6</option>
@@ -17,7 +29,7 @@ function Stat({ statName, icon, stat, condition }) {
           </select>
         </div>
       </div>
-      <img src={icon} alt={statName} />
+      <img src={statImage[statName]} alt={statName} />
     </div>
   );
 }

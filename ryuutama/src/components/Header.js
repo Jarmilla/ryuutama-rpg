@@ -1,4 +1,6 @@
 import React from "react";
+import passTargetValueTo from "../utility/passTargetValueTo";
+
 import title from "../img/title.png";
 import artisan from "../img/artisan.png";
 import farmer from "../img/farmer.png";
@@ -8,7 +10,7 @@ import merchant from "../img/merchant.png";
 import minstrel from "../img/minstrel.png";
 import noble from "../img/noble.png";
 
-function Header({ class1 }) {
+function Header({ setRyubito, setCreationDate, class1 }) {
   const imageChooser = {
     Artisan: artisan,
     Farmer: farmer,
@@ -25,9 +27,9 @@ function Header({ class1 }) {
         <img src={title} alt="Ryuutama" />
         <h3>Charcter Sheet</h3>
         <span>Ryubito</span>
-        <input type="text" />
+        <input type="text" required onChange={passTargetValueTo(setRyubito)} />
         <span>Created</span>
-        <input type="date" />
+        <input type="date" required onChange={passTargetValueTo(setCreationDate)} />
       </div>
       <div className="image-container">
         {" "}

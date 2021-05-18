@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import passTargetValueTo from "../utility/passTargetValueTo";
 import ClassChooser from "./ClassChooser";
 import TypeChooser from "./TypeChooser";
 import typeInfo from "../datas/typeInfo";
 
-function BaseInfo({ setClass1, type1, setType1 }) {
+function BaseInfo({ setCharName, setPlayerName, setSex, setExp, setAge, setClass1, type1, setType1, setClass2, type2, setType2 }) {
   const [showExtras, setShowExtras] = useState(false);
 
   return (
@@ -11,28 +12,28 @@ function BaseInfo({ setClass1, type1, setType1 }) {
       <div className="character-main-rows">
         <div className="character-rows">
           <p> Character name: </p>
-          <input required type="text" />
+          <input type="text" required onChange={passTargetValueTo(setCharName)} />
           <p>Player name: </p>
-          <input required type="text" />
+          <input type="text" required onChange={passTargetValueTo(setPlayerName)} />
         </div>
       </div>
 
       <div className="character-main-rows">
         <div className="character-rows">
           <p>Level:</p>
-          <input type="number" />
+          <p>kiszámolva</p>
           <p>EXP: </p>
-          <input type="number" />
+          <input type="number" required onChange={passTargetValueTo(setExp)} />
 
           <p>Sex: </p>
-          <select name="gender selection">
+          <select name="gender selection" required onClick={passTargetValueTo(setSex)}>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
           </select>
 
           <p>Age: </p>
-          <input required type="text" />
+          <input type="text" required onChange={passTargetValueTo(setAge)} />
         </div>
       </div>
 
@@ -53,7 +54,7 @@ function BaseInfo({ setClass1, type1, setType1 }) {
           <div className="character-rows">
             <img src={type1 && typeInfo[type1].img} alt={type1} />
             <p>{type1 && typeInfo[type1].description}</p>
-            <button onClick={() => setShowExtras(!showExtras)}>Show extras</button>
+            <button onClick={() => setShowExtras(!showExtras)}>{showExtras ? "Hide extras" : "Show extras"}</button>
           </div>
           {showExtras && (
             <div className="character-rows">
