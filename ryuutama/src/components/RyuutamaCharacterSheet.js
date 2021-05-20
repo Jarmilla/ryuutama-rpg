@@ -14,7 +14,7 @@ function RyuutamaCharacterSheet() {
   const [exp, setExp] = useState(null);
   const [sex, setSex] = useState("");
   const [age, setAge] = useState(null);
-  const [class1, setClass1] = useState("");
+  const [class1, setClass1] = useState(null);
   const [type1, setType1] = useState("");
   const [class2, setClass2] = useState("");
   const [type2, setType2] = useState("");
@@ -84,7 +84,9 @@ function RyuutamaCharacterSheet() {
           setType2={setType2}
           onChange={console.log(class1, type1)}
         />
-        <ClassSkills setClass1={setClass1} /> {/*hiányoznak belőle az adatok és azoknak a mapelésük*/}
+
+        <ClassSkills class1={class1} />
+
         {/* PersonalGoals.js ?*/}
         <div className="character-sheet">
           <div className="character-rows">
@@ -114,7 +116,7 @@ function RyuutamaCharacterSheet() {
         </button>
       </form>
       <div>
-        localstoragedata
+        localstoragedata ideiglenes
         <p>{character.age}</p>
         <p>{character.class1}</p>
         <p>{character.reasonToTravel}</p>
