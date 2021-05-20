@@ -2,9 +2,9 @@ export const classSkills = {
   well_traveled: {
     name: "Well-traveled",
     effect: "+1 Travel/Direction/Camping Checks; always in effect",
-    usableCircumstances: "",
-    statsUsed: "",
-    targetNumber: "",
+    usableCircumstances: "-----",
+    statsUsed: "-----",
+    targetNumber: "-----",
   },
   knowledge_of_tradition: {
     name: "Knowledge of tradition",
@@ -27,14 +27,14 @@ export const classSkills = {
     effect: "Negotiation Check [INT + SPI] gets +1, always in effect",
     usableCircumstances: "Any Negotiation Check",
     statsUsed: "[INT + SPI]",
-    targetNumber: "",
+    targetNumber: "-----",
   },
   animal_owner: {
     name: "Animal Owner",
     effect: "You can keep 2 more animals for a total of 3 without paying for their food and water.",
-    usableCircumstances: "",
-    statsUsed: "",
-    targetNumber: "",
+    usableCircumstances: "-----",
+    statsUsed: "-----",
+    targetNumber: "-----",
   },
   trader: {
     name: "Trader",
@@ -71,7 +71,7 @@ export const classSkills = {
     effect: "Target character recovers HP equal to the result of [INT + SPI]. During combat, only roll with [INT] (only 1 die.)",
     usableCircumstances: "Spend 1 Healing Herb",
     statsUsed: "[INT + SPI]",
-    targetNumber: "",
+    targetNumber: "-----",
   },
   first_aid: {
     name: "First Aid",
@@ -92,9 +92,9 @@ export const classSkills = {
   robust: {
     name: "Robust",
     effect: "+1 bonus to Condition Checks. +3 bonus to Carrying Capacity",
-    usableCircumstances: "",
-    statsUsed: "",
-    targetNumber: "",
+    usableCircumstances: "-----",
+    statsUsed: "-----",
+    targetNumber: "-----",
   },
   side_job: {
     name: "Side-Job",
@@ -137,18 +137,18 @@ export const classSkills = {
     name: "Weapon Grace",
     effect:
       "Choose Blade/Polearm/Bow; it becomes an additional Mastered Weapon. If chosen category is already a Mastered Weapon, gain +1 bonus to Accuracy checks.",
-    usableCircumstances: "",
-    statsUsed: "",
-    targetNumber: "",
+    usableCircumstances: "-----",
+    statsUsed: "-----",
+    targetNumber: "-----",
   },
 };
 
 export const classes = {
-  minstrel: { skills: [classSkills.well_traveled, classSkills.knowledge_of_tradition, classSkills.music] },
-  merchant: { skills: [classSkills.well_spoken, classSkills.animal_owner, classSkills.trader] },
-  hunter: { skills: [classSkills.animal_tracking, classSkills.trapping, classSkills.hunting] },
-  healer: { skills: [classSkills.healing, classSkills.first_aid, classSkills.herb_gathering] },
-  farmer: { skills: [classSkills.robust, classSkills.animal_owner, classSkills.side_job] },
-  artisian: { skills: [classSkills.trapping, classSkills.crafting, classSkills.repair] },
-  noble: { skills: [classSkills.etiquette, classSkills.refined_education, classSkills.weapon_grace] },
+  Minstrel: { skills: [classSkills.well_traveled, classSkills.knowledge_of_tradition, classSkills.music] },
+  Merchant: { skills: [classSkills.well_spoken, classSkills.animal_owner, classSkills.trader] },
+  Hunter: { skills: [classSkills.animal_tracking, classSkills.trapping, classSkills.hunting] },
+  Healer: { skills: [classSkills.healing, classSkills.first_aid, classSkills.herb_gathering] },
+  Farmer: { skills: [classSkills.robust, classSkills.animal_owner, classSkills.side_job] },
+  Artisian: { skills: [classSkills.trapping, classSkills.crafting, classSkills.repair] },
+  Noble: { skills: [classSkills.etiquette, classSkills.refined_education, classSkills.weapon_grace] },
 };

@@ -69,7 +69,7 @@ function DiceSection({ str, setStr, dex, setDex, int, setInt, spt, setSpt, fumbl
 
       <div className="character-main-rows">
         <div className="character-cols">
-          <div>Traveling Rules</div>
+          <div>Traveling Checks</div>
           <RollCheck checkTitle={"1. Movement Check [STR + DEX]"} dice1={str} dice2={dex} setFumble={setFumble} />
           <RollCheck checkTitle={"2. Direction Check [INT + INT]"} dice1={int} dice2={int} setFumble={setFumble} />
           <RollCheck checkTitle={"3. Camp Check [DEX + INT]"} dice1={dex} dice2={int} setFumble={setFumble} />

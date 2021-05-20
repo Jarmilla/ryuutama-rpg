@@ -1,7 +1,7 @@
 import React from "react";
 
 function ClassChooser({ setClass }) {
-  const classes = ["Minstrel", "Merchant", "Healer", "Hunter", "Artisan", "Farmer", "Noble"];
+  const classes = ["Minstrel", "Merchant", "Healer", "Hunter", "Farmer", "Artisan", "Noble"];
   return (
     <select name="class-selector">
       {classes.map((class_, key) => (

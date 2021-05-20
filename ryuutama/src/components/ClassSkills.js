@@ -1,18 +1,18 @@
 import React from "react";
-import { classes, classSkills } from "../datas/classInfo";
+import ClassInfoDisplayer from "./ClassInfoDisplayer";
+import { classes } from "../datas/classInfo";
 
-function ClassSkills(class1) {
+function ClassSkills({ class1 }) {
   return (
     <div className="character-sheet">
       <div className="character-rows">
-        <div>Class Skill</div>
-        <div>Stats Used</div>
-        <div>Effect</div>
+        <div className="equally-trisect-flexed">Class Skill</div>
+        <div className="equally-trisect-flexed">Stats Used</div>
+        <div className="equally-trisect-flexed">Target Number</div>
       </div>
-
-      <div>{classes.minstrel.skills[0].name}</div>
-
-      <span>3 class1 skill, 3 class2 skill generálás</span>
+      {class1 && <ClassInfoDisplayer skill={classes[class1].skills[0]} />}
+      {class1 && <ClassInfoDisplayer skill={classes[class1].skills[1]} />}
+      {class1 && <ClassInfoDisplayer skill={classes[class1].skills[2]} />}
     </div>
   );
 }

@@ -36,8 +36,8 @@ body {
 
 .character-rows {
   display: flex;
-  justify-content: center;
-  align-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 1rem;
   width: 100%;
   p {
@@ -49,6 +49,14 @@ body {
 
   img {
     width: 4rem;
+  }
+  .equally-trisect-flexed {
+    flex-basis: 30%;
+  }
+
+  .sixth-flexed {
+    flex-basis: 60%;
+    text-align: left;
   }
 }
 

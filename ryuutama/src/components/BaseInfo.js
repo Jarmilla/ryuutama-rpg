@@ -2,7 +2,6 @@ import React from "react";
 import passTargetValueTo from "../utility/passTargetValueTo";
 import ClassChooser from "./ClassChooser";
 import TypeChooser from "./TypeChooser";
-
 import TypeInfoDisplayer from "./TypeInfoDisplayer";
 
 function BaseInfo({ setCharName, setPlayerName, setSex, setExp, setAge, setClass1, type1, setType1, setClass2, type2, setType2 }) {
@@ -46,7 +45,9 @@ function BaseInfo({ setCharName, setPlayerName, setSex, setExp, setAge, setClass
           <p>2nd Type</p> {/*  ha elért x levelre Show TypeChooser setType={setType2} /> */}
         </div>
       </div>
+
       <TypeInfoDisplayer type={type1} />
+      {/*  ha elért x levelre Show <TypeInfoDisplayer type={type2} /> */}
     </div>
   );
 }
