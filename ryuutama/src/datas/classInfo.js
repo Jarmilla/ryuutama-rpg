@@ -2,9 +2,9 @@ export const classSkills = {
   well_traveled: {
     name: "Well-traveled",
     effect: "+1 Travel/Direction/Camping Checks; always in effect",
-    usableCircumstances: "-----",
-    statsUsed: "-----",
-    targetNumber: "-----",
+    usableCircumstances: "---",
+    statsUsed: "---",
+    targetNumber: "---",
   },
   knowledge_of_tradition: {
     name: "Knowledge of tradition",
@@ -27,14 +27,14 @@ export const classSkills = {
     effect: "Negotiation Check [INT + SPI] gets +1, always in effect",
     usableCircumstances: "Any Negotiation Check",
     statsUsed: "[INT + SPI]",
-    targetNumber: "-----",
+    targetNumber: "---",
   },
   animal_owner: {
     name: "Animal Owner",
     effect: "You can keep 2 more animals for a total of 3 without paying for their food and water.",
-    usableCircumstances: "-----",
-    statsUsed: "-----",
-    targetNumber: "-----",
+    usableCircumstances: "---",
+    statsUsed: "---",
+    targetNumber: "---",
   },
   trader: {
     name: "Trader",
@@ -42,7 +42,8 @@ export const classSkills = {
     usableCircumstances: "When selling/buying 4 or more of the same item",
     statsUsed: "[INT + SPI]",
     targetNumber: "See table",
-    extra: "Check Result => When purchasing reduce; when selling increase the price.  6-7 => 10%; 8-9 => 20%; 10-13 => 40%; 14-17 => 60%; 18+ => 80%",
+    extra: "Check Result => When purchasing reduce; when selling increase the price.",
+    extra2: " 6-7 => 10%; 8-9 => 20%; 10-13 => 40%; 14-17 => 60%; 18+ => 80%",
   },
   animal_tracking: {
     name: "Animal Tracking",
@@ -71,7 +72,7 @@ export const classSkills = {
     effect: "Target character recovers HP equal to the result of [INT + SPI]. During combat, only roll with [INT] (only 1 die.)",
     usableCircumstances: "Spend 1 Healing Herb",
     statsUsed: "[INT + SPI]",
-    targetNumber: "-----",
+    targetNumber: "---",
   },
   first_aid: {
     name: "First Aid",
@@ -86,15 +87,15 @@ export const classSkills = {
     usableCircumstances: "Once each morning, before the Travel check",
     statsUsed: "[STR + INT]",
     targetNumber: "Topography",
-    extra:
-      "Healing Herb obtained depends on the current terrain. Look up in the Healing Herb list in the Item Section. Healing Herbs are only good for one day, unless you use a disposable herb bottle to keep it fresh for up to a week.",
+    extra: "Healing Herb obtained depends on the current terrain. Look up in the Healing Herb list in the Item Section.",
+    extra2: " Healing Herbs are only good for one day, unless you use a disposable herb bottle to keep it fresh for up to a week.",
   },
   robust: {
     name: "Robust",
     effect: "+1 bonus to Condition Checks. +3 bonus to Carrying Capacity",
-    usableCircumstances: "-----",
-    statsUsed: "-----",
-    targetNumber: "-----",
+    usableCircumstances: "---",
+    statsUsed: "---",
+    targetNumber: "---",
   },
   side_job: {
     name: "Side-Job",
@@ -108,8 +109,8 @@ export const classSkills = {
     usableCircumstances: "Anytime you have the time (1 day per size) and materials (1/2 the gold cost)",
     statsUsed: "[STR + DEX]",
     targetNumber: "See table",
-    table: ["Item Price  Targer number", "100g or less  6", "1000g or less  8", "10,000g or less  10", "100,000g or less  14", "More  18"],
     extra: "If you fail this check, you may try again; the materials won’t be lost, but the time will.",
+    extra2: "Item Price ~ Targer number: 100g or less ~ 6, 1000g or less ~ 8, 10,000g or less ~ 10, 100,000g or less ~ 14, More ~ 18",
   },
   repair: {
     name: "Repair",
@@ -117,8 +118,8 @@ export const classSkills = {
     usableCircumstances: "Anytime you have the time (1 day per size) and materials (10% the gold cost)",
     statsUsed: "[STR + DEX]",
     targetNumber: "See table",
-    table: ["Item Price  Targer number", "100g or less  6", "1000g or less  8", "10,000g or less  10", "100,000g or less  14", "More  18"],
     extra: "This costs 10% of the item’s value, regardless of success or failure. You may retry a failed skill check, but you must pay the cost again.",
+    extra2: "Item Price ~ Targer number: 100g or less ~ 6, 1000g or less ~ 8, 10,000g or less ~ 10, 100,000g or less ~ 14, More ~ 18",
   },
   etiquette: {
     effect: "Leave a positive impression on someone of high rank or status.",
@@ -137,9 +138,9 @@ export const classSkills = {
     name: "Weapon Grace",
     effect:
       "Choose Blade/Polearm/Bow; it becomes an additional Mastered Weapon. If chosen category is already a Mastered Weapon, gain +1 bonus to Accuracy checks.",
-    usableCircumstances: "-----",
-    statsUsed: "-----",
-    targetNumber: "-----",
+    usableCircumstances: "---",
+    statsUsed: "---",
+    targetNumber: "---",
   },
 };
 
@@ -149,6 +150,6 @@ export const classes = {
   Hunter: { skills: [classSkills.animal_tracking, classSkills.trapping, classSkills.hunting] },
   Healer: { skills: [classSkills.healing, classSkills.first_aid, classSkills.herb_gathering] },
   Farmer: { skills: [classSkills.robust, classSkills.animal_owner, classSkills.side_job] },
-  Artisian: { skills: [classSkills.trapping, classSkills.crafting, classSkills.repair] },
+  Artisan: { skills: [classSkills.trapping, classSkills.crafting, classSkills.repair] },
   Noble: { skills: [classSkills.etiquette, classSkills.refined_education, classSkills.weapon_grace] },
 };

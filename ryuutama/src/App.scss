@@ -22,7 +22,6 @@ body {
 }
 
 .character-main-rows {
-  border: 1px black solid; //elhagyható
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -41,7 +40,7 @@ body {
   gap: 1rem;
   width: 100%;
   p {
-    margin: 0.6rem 0;
+    margin: 0;
   }
   .image-container img {
     width: 80%;
