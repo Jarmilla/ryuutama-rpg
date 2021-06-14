@@ -8,7 +8,6 @@ import DiceSection from "./DiceSection";
 function RyuutamaCharacterSheet() {
   const [ryubito, setRyubito] = useState("");
   const [creationDate, setCreationDate] = useState(null);
-
   const [charName, setCharName] = useState("");
   const [playerName, setPlayerName] = useState("");
   const [exp, setExp] = useState(null);
@@ -18,17 +17,13 @@ function RyuutamaCharacterSheet() {
   const [type1, setType1] = useState("");
   const [class2, setClass2] = useState("");
   const [type2, setType2] = useState("");
-
   const [reasonToTravel, setReasonToTravel] = useState("");
   const [personalItem, setPersonalItem] = useState("");
-
   const [str, setStr] = useState(null);
   const [dex, setDex] = useState(null);
   const [int, setInt] = useState(null);
   const [spt, setSpt] = useState(null);
   const [fumble, setFumble] = useState(0);
-
-  /* const [character, setCharacter] = useState({}); */
 
   const [isSaved, setIsSaved] = useState(false);
 
@@ -56,7 +51,6 @@ function RyuutamaCharacterSheet() {
     };
     localStorage.setItem("character", JSON.stringify(character));
     setIsSaved(true);
-    console.log(character);
   }
 
   function loadFromLocalStorage(e) {
@@ -72,7 +66,11 @@ function RyuutamaCharacterSheet() {
     setType1(loadedData.type1);
     setClass2(loadedData.class2);
     setType2(loadedData.type2);
-
+    setStr(loadedData.str);
+    setDex(loadedData.dex);
+    setInt(loadedData.int);
+    setSpt(loadedData.spt);
+    setFumble(loadedData.fumble);
     setIsSaved(false);
   }
 
@@ -112,6 +110,7 @@ function RyuutamaCharacterSheet() {
         </div>
 
         <DiceSection
+          isSaved={isSaved}
           str={str}
           setStr={setStr}
           dex={dex}
@@ -123,10 +122,10 @@ function RyuutamaCharacterSheet() {
           fumble={fumble}
           setFumble={setFumble}
         />
-        <button type="submit" onClick={loadFromLocalStorage}>
+        <button type="submit" disabled={!isSaved} onClick={loadFromLocalStorage}>
           Edit
         </button>
-        <button type="submit" onClick={saveToLocalStorage}>
+        <button type="submit" disabled={isSaved} onClick={saveToLocalStorage}>
           Save
         </button>
       </form>

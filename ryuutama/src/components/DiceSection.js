@@ -8,7 +8,7 @@ import hp from "../img/hp.png";
 import mana from "../img/mana.png";
 import fumbles from "../img/fumbles.png";
 
-function DiceSection({ str, setStr, dex, setDex, int, setInt, spt, setSpt, fumble, setFumble }) {
+function DiceSection({ isSaved, str, setStr, dex, setDex, int, setInt, spt, setSpt, fumble, setFumble }) {
   const [condition, setCondition] = useState(null);
 
   return (
@@ -16,10 +16,10 @@ function DiceSection({ str, setStr, dex, setDex, int, setInt, spt, setSpt, fumbl
       <div className="character-main-rows">
         <div>Stats</div>
 
-        <Stat statName="str" setStat={setStr} condition={condition} />
-        <Stat statName="dex" setStat={setDex} condition={condition} />
-        <Stat statName="int" setStat={setInt} condition={condition} />
-        <Stat statName="spt" setStat={setSpt} condition={condition} />
+        <Stat statName="str" isSaved={isSaved} stat={str} setStat={setStr} condition={condition} />
+        <Stat statName="dex" isSaved={isSaved} stat={dex} setStat={setDex} condition={condition} />
+        <Stat statName="int" isSaved={isSaved} stat={int} setStat={setInt} condition={condition} />
+        <Stat statName="spt" isSaved={isSaved} stat={spt} setStat={setSpt} condition={condition} />
         {/* ? info about which stat represent what -page 30 in eng pdf
         Carrying Capacity [STR] +3 */}
       </div>
@@ -81,9 +81,15 @@ function DiceSection({ str, setStr, dex, setDex, int, setInt, spt, setSpt, fumbl
           <div className="character-rows">
             <p>Fumble Points</p>
             <img src={fumbles} alt="fumbles" /> {}
-            <button onClick={() => setFumble(fumble + 1)}>+</button>
-            <h3>{fumble}</h3>
-            <button onClick={() => setFumble(fumble - 1)}>-</button>
+            {isSaved ? (
+              <h3>{fumble}</h3>
+            ) : (
+              <div className="character-rows">
+                <button onClick={() => setFumble(fumble + 1)}>+</button>
+                <h3>{fumble}</h3>
+                <button onClick={() => setFumble(fumble - 1)}>-</button>
+              </div>
+            )}
           </div>
 
           <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} setFumble={setFumble} />
