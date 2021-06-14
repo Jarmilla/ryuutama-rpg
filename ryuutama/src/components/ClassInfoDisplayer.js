@@ -18,13 +18,11 @@ function ClassInfoDisplayer({ skill }) {
         </div>
       )}{" "}
       {showExtras && (
-        <div>
-          <div className="character-rows">
-            <ul> {skill.usableCircumstances}</ul>
-            <ul> {skill?.extra}</ul>
-          </div>
-          <div className="character-rows"> {skill?.extra2}</div>
-        </div>
+        <ul>
+          <li> {skill.usableCircumstances}</li>
+          {skill?.extra ? <li>{skill.extra} </li> : ""}
+          {skill?.extra2 ? <li>{skill.extra2} </li> : ""}
+        </ul>
       )}
     </div>
   );

@@ -28,11 +28,13 @@ function RyuutamaCharacterSheet() {
   const [spt, setSpt] = useState(null);
   const [fumble, setFumble] = useState(0);
 
-  const [character, setCharacter] = useState({});
+  /* const [character, setCharacter] = useState({}); */
+
+  const [isSaved, setIsSaved] = useState(false);
 
   function saveToLocalStorage(e) {
     e.preventDefault();
-    setCharacter({
+    let character = {
       ryubito: ryubito,
       creationDate: creationDate,
       charName: charName,
@@ -51,34 +53,58 @@ function RyuutamaCharacterSheet() {
       int: int,
       spt: spt,
       fumble: fumble,
-    });
+    };
+    localStorage.setItem("character", JSON.stringify(character));
+    setIsSaved(true);
     console.log(character);
   }
 
-  useEffect(() => {
+  function loadFromLocalStorage(e) {
+    let loadedData = JSON.parse(localStorage.getItem("character"));
+    setRyubito(loadedData.ryubito);
+    setCreationDate(loadedData.creationDate);
+    setCharName(loadedData.charName);
+    setPlayerName(loadedData.playerName);
+    setExp(loadedData.exp);
+    setSex(loadedData.sex);
+    setAge(loadedData.age);
+    setClass1(loadedData.class1);
+    setType1(loadedData.type1);
+    setClass2(loadedData.class2);
+    setType2(loadedData.type2);
+
+    setIsSaved(false);
+  }
+
+  /*   useEffect(() => {
     const isThereDataInLocalStorage = localStorage.getItem("character");
     if (isThereDataInLocalStorage) {
-      setCharacter(JSON.parse(isThereDataInLocalStorage));
+      setCharacter(JSON.parse(isThereDataInLocalStorage))
+      setPlayerName(character.playerName || "")
     }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("character", JSON.stringify(character));
-  });
+  }, []); */
 
   return (
     <div>
-      <Header setRyubito={setRyubito} setCreationDate={setCreationDate} class1={class1} />
+      <Header isSaved={isSaved} ryubito={ryubito} setRyubito={setRyubito} creationDate={creationDate} setCreationDate={setCreationDate} class1={class1} />
       <form>
         <BaseInfo
+          isSaved={isSaved}
+          charName={charName}
           setCharName={setCharName}
+          playerName={playerName}
           setPlayerName={setPlayerName}
+          sex={sex}
           setSex={setSex}
+          exp={exp}
           setExp={setExp}
+          age={age}
           setAge={setAge}
+          class1={class1}
           setClass1={setClass1}
           type1={type1}
           setType1={setType1}
+          class2={class2}
           setClass2={setClass2}
           type2={type2}
           setType2={setType2}
@@ -111,16 +137,13 @@ function RyuutamaCharacterSheet() {
           fumble={fumble}
           setFumble={setFumble}
         />
+        <button type="submit" onClick={loadFromLocalStorage}>
+          Edit
+        </button>
         <button type="submit" onClick={saveToLocalStorage}>
           Save
         </button>
       </form>
-      <div>
-        localstoragedata ideiglenes
-        <p>{character.age}</p>
-        <p>{character.class1}</p>
-        <p>{character.reasonToTravel}</p>
-      </div>
     </div>
   );
 }

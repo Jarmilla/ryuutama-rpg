@@ -10,7 +10,7 @@ import merchant from "../img/merchant.png";
 import minstrel from "../img/minstrel.png";
 import noble from "../img/noble.png";
 
-function Header({ setRyubito, setCreationDate, class1 }) {
+function Header({ isSaved, ryubito, setRyubito, creationDate, setCreationDate, class1 }) {
   const imageChooser = {
     Artisan: artisan,
     Farmer: farmer,
@@ -27,9 +27,10 @@ function Header({ setRyubito, setCreationDate, class1 }) {
         <img src={title} alt="Ryuutama" />
         <h3>Charcter Sheet</h3>
         <span>Ryubito</span>
-        <input type="text" required onChange={passTargetValueTo(setRyubito)} />
+        {isSaved ? <p>{ryubito}</p> : <input type="text" value={ryubito} required onChange={passTargetValueTo(setRyubito)} />}
+
         <span>Created</span>
-        <input type="date" required onChange={passTargetValueTo(setCreationDate)} />
+        {isSaved ? <p>{creationDate}</p> : <input type="date" value={creationDate} required onChange={passTargetValueTo(setCreationDate)} />}
       </div>
       <div className="image-container">
         {" "}
