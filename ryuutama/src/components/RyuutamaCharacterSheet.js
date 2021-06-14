@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import passTargetValueTo from "../utility/passTargetValueTo";
+import React, { useState } from "react";
+import Header from "./Header";
 import BaseInfo from "./BaseInfo";
 import ClassSkills from "./ClassSkills";
+import PersonalGoals from "./PersonalGoals";
 import DiceSection from "./DiceSection";
-import Header from "./Header";
 
 function RyuutamaCharacterSheet() {
   const [ryubito, setRyubito] = useState("");
@@ -76,14 +76,6 @@ function RyuutamaCharacterSheet() {
     setIsSaved(false);
   }
 
-  /*   useEffect(() => {
-    const isThereDataInLocalStorage = localStorage.getItem("character");
-    if (isThereDataInLocalStorage) {
-      setCharacter(JSON.parse(isThereDataInLocalStorage))
-      setPlayerName(character.playerName || "")
-    }
-  }, []); */
-
   return (
     <div>
       <Header isSaved={isSaved} ryubito={ryubito} setRyubito={setRyubito} creationDate={creationDate} setCreationDate={setCreationDate} class1={class1} />
@@ -112,19 +104,13 @@ function RyuutamaCharacterSheet() {
         />
 
         <ClassSkills class1={class1} />
+        {/* if u reched certain level <ClassSkills class2={class2} /> */}
 
-        {/* PersonalGoals.js ?*/}
         <div className="character-sheet">
-          <div className="character-rows">
-            <div>Reason to travel:</div>
-            <input type="text" required onChange={passTargetValueTo(setReasonToTravel)} />
-          </div>
-
-          <div className="character-rows">
-            <div>Personal item:</div>
-            <input type="text" required onChange={passTargetValueTo(setPersonalItem)} />
-          </div>
+          <PersonalGoals isSaved={isSaved} title="Reason to travel: " value={reasonToTravel} setValue={setReasonToTravel} />
+          <PersonalGoals isSaved={isSaved} title="Personal item: " value={personalItem} setValue={setPersonalItem} />
         </div>
+
         <DiceSection
           str={str}
           setStr={setStr}
