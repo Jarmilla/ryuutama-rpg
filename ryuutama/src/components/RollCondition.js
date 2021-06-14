@@ -7,7 +7,14 @@ function RollCondition({ checkTitle, dice1, dice2, condition, setCondition }) {
     <div className="character-rows">
       <p>{checkTitle}</p>
       <img src={condtition} alt="condtition" />
-      <button onClick={() => setCondition(rolling(dice1, dice2))}>Roll</button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          setCondition(rolling(dice1, dice2));
+        }}
+      >
+        Roll
+      </button>
       <h3>{condition && condition}</h3>
     </div>
   );

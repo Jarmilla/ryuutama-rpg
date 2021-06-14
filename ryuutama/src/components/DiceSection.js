@@ -70,9 +70,9 @@ function DiceSection({ isSaved, str, setStr, dex, setDex, int, setInt, spt, setS
       <div className="character-main-rows">
         <div className="character-cols">
           <div>Traveling Checks</div>
-          <RollCheck checkTitle={"1. Movement Check [STR + DEX]"} dice1={str} dice2={dex} setFumble={setFumble} />
-          <RollCheck checkTitle={"2. Direction Check [INT + INT]"} dice1={int} dice2={int} setFumble={setFumble} />
-          <RollCheck checkTitle={"3. Camp Check [DEX + INT]"} dice1={dex} dice2={int} setFumble={setFumble} />
+          <RollCheck checkTitle={"1. Movement Check [STR + DEX]"} dice1={str} dice2={dex} fumble={fumble} setFumble={setFumble} />
+          <RollCheck checkTitle={"2. Direction Check [INT + INT]"} dice1={int} dice2={int} fumble={fumble} setFumble={setFumble} />
+          <RollCheck checkTitle={"3. Camp Check [DEX + INT]"} dice1={dex} dice2={int} fumble={fumble} setFumble={setFumble} />
         </div>
 
         <div className="character-cols">
@@ -92,7 +92,7 @@ function DiceSection({ isSaved, str, setStr, dex, setDex, int, setInt, spt, setS
             )}
           </div>
 
-          <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} setFumble={setFumble} />
+          <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} fumble={fumble} setFumble={setFumble} />
 
           <OtherRoll str={str} dex={dex} int={int} spt={spt} fumble={fumble} setFumble={setFumble} />
         </div>

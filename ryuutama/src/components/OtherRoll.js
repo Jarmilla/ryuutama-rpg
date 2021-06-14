@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { rolling } from "../utility/Rolling";
 
 function OtherRoll({ str, dex, int, spt, fumble, setFumble }) {
@@ -6,12 +6,9 @@ function OtherRoll({ str, dex, int, spt, fumble, setFumble }) {
   const [dice1, setDice1] = useState(0);
   const [dice2, setDice2] = useState(0);
 
-  useEffect(
-    (fumble, setFumble) => {
-      if (result === 6) setFumble(fumble + 1); //finals: result === 2
-    },
-    [result]
-  );
+  function addingFumble(result) {
+    if (result === 2) return setFumble(fumble + 1);
+  }
 
   return (
     <div className="character-rows">
@@ -36,8 +33,16 @@ function OtherRoll({ str, dex, int, spt, fumble, setFumble }) {
         ]
       </p>
 
-      <button onClick={() => setResult(rolling(dice1, dice2))}>Roll</button>
-      <h3>{result && result}</h3>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          setResult(rolling(dice1, dice2));
+          addingFumble(result);
+        }}
+      >
+        Roll
+      </button>
+      <h3>{result}</h3>
     </div>
   );
 }

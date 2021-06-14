@@ -54,6 +54,7 @@ function RyuutamaCharacterSheet() {
   }
 
   function loadFromLocalStorage(e) {
+    e.preventDefault();
     let loadedData = JSON.parse(localStorage.getItem("character"));
     setRyubito(loadedData.ryubito);
     setCreationDate(loadedData.creationDate);
@@ -71,7 +72,6 @@ function RyuutamaCharacterSheet() {
     setInt(loadedData.int);
     setSpt(loadedData.spt);
     setFumble(loadedData.fumble);
-    setIsSaved(false);
   }
 
   return (
@@ -122,11 +122,27 @@ function RyuutamaCharacterSheet() {
           fumble={fumble}
           setFumble={setFumble}
         />
-        <button type="submit" disabled={!isSaved} onClick={loadFromLocalStorage}>
+        <button
+          type="submit"
+          disabled={!isSaved}
+          onClick={(e) => {
+            loadFromLocalStorage(e);
+            setIsSaved(false);
+          }}
+        >
           Edit
         </button>
         <button type="submit" disabled={isSaved} onClick={saveToLocalStorage}>
           Save
+        </button>
+        <button
+          type="submit"
+          onClick={(e) => {
+            loadFromLocalStorage(e);
+            setIsSaved(true);
+          }}
+        >
+          Load
         </button>
       </form>
     </div>
