@@ -2,9 +2,9 @@ export const classSkills = {
   well_traveled: {
     name: "Well-traveled",
     effect: "+1 Travel/Direction/Camping Checks; always in effect",
-    usableCircumstances: "---",
-    statsUsed: "---",
-    targetNumber: "---",
+    usableCircumstances: "",
+    statsUsed: "",
+    targetNumber: "",
   },
   knowledge_of_tradition: {
     name: "Knowledge of tradition",
@@ -27,14 +27,14 @@ export const classSkills = {
     effect: "Negotiation Check [INT + SPI] gets +1, always in effect",
     usableCircumstances: "Any Negotiation Check",
     statsUsed: "[INT + SPI]",
-    targetNumber: "---",
+    targetNumber: "",
   },
   animal_owner: {
     name: "Animal Owner",
     effect: "You can keep 2 more animals for a total of 3 without paying for their food and water.",
-    usableCircumstances: "---",
-    statsUsed: "---",
-    targetNumber: "---",
+    usableCircumstances: "",
+    statsUsed: "",
+    targetNumber: "",
   },
   trader: {
     name: "Trader",
@@ -72,7 +72,7 @@ export const classSkills = {
     effect: "Target character recovers HP equal to the result of [INT + SPI]. During combat, only roll with [INT] (only 1 die.)",
     usableCircumstances: "Spend 1 Healing Herb",
     statsUsed: "[INT + SPI]",
-    targetNumber: "---",
+    targetNumber: "",
   },
   first_aid: {
     name: "First Aid",
@@ -93,9 +93,9 @@ export const classSkills = {
   robust: {
     name: "Robust",
     effect: "+1 bonus to Condition Checks. +3 bonus to Carrying Capacity",
-    usableCircumstances: "---",
-    statsUsed: "---",
-    targetNumber: "---",
+    usableCircumstances: "",
+    statsUsed: "",
+    targetNumber: "",
   },
   side_job: {
     name: "Side-Job",
@@ -122,6 +122,7 @@ export const classSkills = {
     extra2: "Item Price ~ Targer number: 100g or less ~ 6, 1000g or less ~ 8, 10,000g or less ~ 10, 100,000g or less ~ 14, More ~ 18",
   },
   etiquette: {
+    Name: "Etiquette",
     effect: "Leave a positive impression on someone of high rank or status.",
     usableCircumstances: "Conversing with someone of rank or status",
     statsUsed: "[DEX + INT]",
@@ -138,9 +139,9 @@ export const classSkills = {
     name: "Weapon Grace",
     effect:
       "Choose Blade/Polearm/Bow; it becomes an additional Mastered Weapon. If chosen category is already a Mastered Weapon, gain +1 bonus to Accuracy checks.",
-    usableCircumstances: "---",
-    statsUsed: "---",
-    targetNumber: "---",
+    usableCircumstances: "",
+    statsUsed: "",
+    targetNumber: "",
   },
 };
 

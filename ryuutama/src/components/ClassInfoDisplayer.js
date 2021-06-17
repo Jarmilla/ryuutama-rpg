@@ -7,13 +7,22 @@ function ClassInfoDisplayer({ skill }) {
       {skill && (
         <div className="character-main-cols">
           <div className="character-rows">
-            <p className="equally-trisect-flexed">{skill.name}</p>
+            <h3 className="equally-trisect-flexed">{skill.name}</h3>
             <p className="equally-trisect-flexed">{skill.statsUsed}</p>
             <p className="equally-trisect-flexed">{skill.targetNumber}</p>
           </div>
           <div className="character-rows">
             <p className="sixth-flexed">{skill.effect}</p>
-            <button onClick={() => setShowExtras(!showExtras)}>{showExtras ? "Hide extras" : "Show extras"}</button>
+            {skill.usableCircumstances && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowExtras(!showExtras);
+                }}
+              >
+                {showExtras ? "Hide extras" : "Show extras"}
+              </button>
+            )}
           </div>
         </div>
       )}{" "}

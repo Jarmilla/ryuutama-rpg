@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Texturina:wght@300;400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Texturina:wght@300;500;700;800&display=swap");
 
 body {
   margin: 0;
@@ -10,18 +10,34 @@ body {
   background-color: antiquewhite;
   font-family: "Texturina", serif;
   line-height: 2rem;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
+}
+
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  color: green;
 }
 
 .character-sheet {
   border: 2px solid gray;
   border-radius: 5px;
   margin: 1rem;
-  padding: 1rem;
+}
+
+header img {
+  width: 80%;
 }
 
 .character-main-rows {
+  //header; str, dex
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -39,12 +55,6 @@ body {
   align-items: center;
   gap: 1rem;
   width: 100%;
-  p {
-    margin: 0;
-  }
-  .image-container img {
-    width: 80%;
-  }
 
   img {
     width: 4rem;

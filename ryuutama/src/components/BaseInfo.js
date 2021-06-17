@@ -27,48 +27,42 @@ function BaseInfo({
 }) {
   return (
     <div className="character-sheet">
-      <div className="character-main-rows">
-        <div className="character-rows">
-          <p> Character name: </p>
-          {isSaved ? <p>{charName}</p> : <input type="text" value={charName} required onChange={passTargetValueTo(setCharName)} />}
+      <div className="character-rows">
+        <h2> Character name: </h2>
+        {isSaved ? <p>{charName}</p> : <input type="text" value={charName} required onChange={passTargetValueTo(setCharName)} />}
 
-          <p>Player name: </p>
-          {isSaved ? <p>{playerName}</p> : <input type="text" value={playerName} required onChange={passTargetValueTo(setPlayerName)} />}
-        </div>
+        <h2>Player name: </h2>
+        {isSaved ? <p>{playerName}</p> : <input type="text" value={playerName} required onChange={passTargetValueTo(setPlayerName)} />}
       </div>
 
-      <div className="character-main-rows">
-        <div className="character-rows">
-          <p>Level:</p>
-          <p>ToDo!</p> {/* kiszámoli az exp-ből */}
-          <p>EXP: </p>
-          {isSaved ? <p>{exp}</p> : <input type="number" value={exp} required onChange={passTargetValueTo(setExp)} />}
-          <p>Sex: </p>
-          {isSaved ? (
-            <p>{sex}</p>
-          ) : (
-            <select name="gender selection" required onClick={passTargetValueTo(setSex)}>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          )}
-          <p>Age: </p>
-          {isSaved ? <p>{age}</p> : <input type="text" value={age} required onChange={passTargetValueTo(setAge)} />}
-        </div>
+      <div className="character-rows">
+        <h2>Level:</h2>
+        <p>ToDo!</p> {/* kiszámoli az exp-ből */}
+        <h2>EXP: </h2>
+        {isSaved ? <p>{exp}</p> : <input type="number" value={exp} required onChange={passTargetValueTo(setExp)} />}
+        <h2>Sex: </h2>
+        {isSaved ? (
+          <p>{sex}</p>
+        ) : (
+          <select name="gender selection" required onClick={passTargetValueTo(setSex)}>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        )}
+        <h2>Age: </h2>
+        {isSaved ? <p>{age}</p> : <input type="text" value={age} required onChange={passTargetValueTo(setAge)} />}
       </div>
 
-      <div className="character-main-rows">
-        <div className="character-rows">
-          <p>Class:</p>
-          {isSaved ? <p>{class1}</p> : <ClassChooser setClass={setClass1} />}
-          <p> / </p>
-          <p>2nd Class</p> {/*  ha elért x levelre Show <ClassChooser setClass={setClass2} /> */}
-          <p>Type:</p>
-          {isSaved ? <p>{type1}</p> : <TypeChooser setType={setType1} />}
-          <p> / </p>
-          <p>2nd Type</p> {/*  ha elért x levelre Show TypeChooser setType={setType2} /> */}
-        </div>
+      <div className="character-rows">
+        <h2>Class:</h2>
+        {isSaved ? <p>{class1}</p> : <ClassChooser setClass={setClass1} />}
+        <p> / </p>
+        <p>2nd Class</p> {/*  ha elért x levelre Show <ClassChooser setClass={setClass2} /> */}
+        <h2>Type:</h2>
+        {isSaved ? <p>{type1}</p> : <TypeChooser setType={setType1} />}
+        <p> / </p>
+        <p>2nd Type</p> {/*  ha elért x levelre Show TypeChooser setType={setType2} /> */}
       </div>
 
       <TypeInfoDisplayer type={type1} />

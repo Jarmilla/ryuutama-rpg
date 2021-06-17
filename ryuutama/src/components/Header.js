@@ -22,17 +22,20 @@ function Header({ isSaved, ryubito, setRyubito, creationDate, setCreationDate, c
   };
 
   return (
-    <header className="character-rows">
-      <div className="image-container">
+    <header className="character-main-rows">
+      <div>
         <img src={title} alt="Ryuutama" />
-        <h3>Charcter Sheet</h3>
-        <span>Ryubito</span>
-        {isSaved ? <p>{ryubito}</p> : <input type="text" value={ryubito} required onChange={passTargetValueTo(setRyubito)} />}
+        <h1>Charcter Sheet</h1>
+        <div className="character-rows">
+          <h2>Ryubito</h2>
+          {isSaved ? <p>{ryubito}</p> : <input type="text" value={ryubito} required onChange={passTargetValueTo(setRyubito)} />}
 
-        <span>Created</span>
-        {isSaved ? <p>{creationDate}</p> : <input type="date" value={creationDate} required onChange={passTargetValueTo(setCreationDate)} />}
+          <h2>Created</h2>
+          {isSaved ? <p>{creationDate}</p> : <input type="date" value={creationDate} required onChange={passTargetValueTo(setCreationDate)} />}
+        </div>
       </div>
-      <div className="image-container">
+
+      <div>
         {" "}
         <img src={imageChooser[class1]} alt={class1} />
       </div>
