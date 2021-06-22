@@ -105,6 +105,7 @@ export const classSkills = {
     targetNumber: "Depends on the skill",
   },
   crafting: {
+    name: "Crafting",
     effect: "Make an item from your specialization: Weapons, Armor, Shoes, Capes, Staves, Hats, Accessories, Food, Sundries, Camping Equipment, or Containers",
     usableCircumstances: "Anytime you have the time (1 day per size) and materials (1/2 the gold cost)",
     statsUsed: "[STR + DEX]",

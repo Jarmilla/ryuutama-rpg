@@ -11,7 +11,7 @@ function OtherRoll({ str, dex, int, spt, fumble, setFumble }) {
   }
 
   return (
-    <div className="character-rows">
+    <div className="input-area wide">
       <p>Other Rolls</p>
       <p>
         [
@@ -32,6 +32,7 @@ function OtherRoll({ str, dex, int, spt, fumble, setFumble }) {
         </select>
         ]
       </p>
+      <h3>{result}</h3>
 
       <button
         onClick={(e) => {
@@ -42,7 +43,6 @@ function OtherRoll({ str, dex, int, spt, fumble, setFumble }) {
       >
         Roll
       </button>
-      <h3>{result}</h3>
     </div>
   );
 }

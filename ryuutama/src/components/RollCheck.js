@@ -9,8 +9,9 @@ function RollCheck({ checkTitle, dice1, dice2, fumble, setFumble }) {
   }
 
   return (
-    <div className="character-rows">
+    <div className="input-area wide">
       <p>{checkTitle}</p>
+      <h3>{result}</h3>
       <button
         onClick={(e) => {
           e.preventDefault();
@@ -20,7 +21,6 @@ function RollCheck({ checkTitle, dice1, dice2, fumble, setFumble }) {
       >
         Roll
       </button>
-      <h3>{result}</h3>
     </div>
   );
 }

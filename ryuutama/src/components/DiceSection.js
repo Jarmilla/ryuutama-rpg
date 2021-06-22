@@ -13,13 +13,15 @@ function DiceSection({ isSaved, str, setStr, dex, setDex, int, setInt, spt, setS
 
   return (
     <div className="character-sheet">
-      <div className="character-main-rows">
-        <div>Stats</div>
-
-        <Stat statName="str" isSaved={isSaved} stat={str} setStat={setStr} condition={condition} />
-        <Stat statName="dex" isSaved={isSaved} stat={dex} setStat={setDex} condition={condition} />
-        <Stat statName="int" isSaved={isSaved} stat={int} setStat={setInt} condition={condition} />
-        <Stat statName="spt" isSaved={isSaved} stat={spt} setStat={setSpt} condition={condition} />
+      <div className="character-rows">
+        <div className="input-area">
+          <Stat statName="str" isSaved={isSaved} stat={str} setStat={setStr} condition={condition} />
+          <Stat statName="dex" isSaved={isSaved} stat={dex} setStat={setDex} condition={condition} />
+        </div>
+        <div className="input-area">
+          <Stat statName="int" isSaved={isSaved} stat={int} setStat={setInt} condition={condition} />
+          <Stat statName="spt" isSaved={isSaved} stat={spt} setStat={setSpt} condition={condition} />
+        </div>
         {/* ? info about which stat represent what -page 30 in eng pdf
         Carrying Capacity [STR] +3 */}
       </div>
@@ -32,62 +34,54 @@ function DiceSection({ isSaved, str, setStr, dex, setDex, int, setInt, spt, setS
         ""
       )}
 
-      <div className="character-main-rows">
-        <div className="character-rows">
-          <div>HP</div>
-          <div className="character-cols">
-            <div className="black-highlight">[MAX HP = STR x 2]</div>
-            <div className="character-rows">
-              <img src={hp} alt="hp" /> {}
-              <h3>{str === null ? "" : str * 2}</h3>
-            </div>
+      <div className="character-rows">
+        <div className="character-cols wide">
+          <h3 className="black-highlight">[MAX HP = STR x 2]</h3>
+          <div className="input-area wide">
+            <h3>Health Point</h3>
+            <img src={hp} alt="hp" /> {}
+            <h3>{str === null ? "" : str * 2}</h3>
           </div>
         </div>
 
-        <div className="character-rows">
-          <div>MP</div>
-          <div className="character-cols">
-            <div className="black-highlight">[MAX MP = SPT x 2]</div>
-            <div className="character-rows">
-              <img src={mana} alt="mana" /> {}
-              <h3>{spt === null ? "" : spt * 2}</h3>
-            </div>
+        <div className="character-cols wide">
+          <h3 className="black-highlight">[MAX MP = SPT x 2]</h3>
+          <div className="input-area wide">
+            <h3>Manna Point</h3>
+            <img src={mana} alt="mana" /> {}
+            <h3>{spt === null ? "" : spt * 2}</h3>
           </div>
         </div>
       </div>
 
-      <div className="character-main-rows">
-        <RollCondition
-          checkTitle={"Condition [STR + SPT] * If over 10, add 1 dice size to any 1 stat"}
-          dice1={str}
-          dice2={dex}
-          condition={condition}
-          setCondition={setCondition}
-          setFumble={setFumble}
-        />
-      </div>
+      <RollCondition dice1={str} dice2={dex} condition={condition} setCondition={setCondition} setFumble={setFumble} />
 
-      <div className="character-main-rows">
-        <div className="character-cols">
-          <div>Traveling Checks</div>
+      <div className="character-rows">
+        <div className="character-cols wide">
+          <h2>Traveling Checks</h2>
           <RollCheck checkTitle={"1. Movement Check [STR + DEX]"} dice1={str} dice2={dex} fumble={fumble} setFumble={setFumble} />
           <RollCheck checkTitle={"2. Direction Check [INT + INT]"} dice1={int} dice2={int} fumble={fumble} setFumble={setFumble} />
           <RollCheck checkTitle={"3. Camp Check [DEX + INT]"} dice1={dex} dice2={int} fumble={fumble} setFumble={setFumble} />
         </div>
 
-        <div className="character-cols">
-          <div>Special Rolls</div>
-
-          <div className="character-rows">
+        <div className="character-cols wide">
+          <h2>Special Rolls</h2>
+          <div className="input-area wide">
             <p>Fumble Points</p>
             <img src={fumbles} alt="fumbles" /> {}
             {isSaved ? (
               <h3>{fumble}</h3>
             ) : (
-              <div className="character-rows">
-                <button onClick={() => setFumble(fumble + 1)}>+</button>
+              <div className="input-area narrow">
                 <h3>{fumble}</h3>
-                <button onClick={() => setFumble(fumble - 1)}>-</button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setFumble(fumble - 1);
+                  }}
+                >
+                  -
+                </button>
               </div>
             )}
           </div>

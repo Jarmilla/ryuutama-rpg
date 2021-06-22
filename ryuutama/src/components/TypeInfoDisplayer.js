@@ -4,12 +4,19 @@ import typeInfo from "../datas/typeInfo";
 function TypeInfoDisplayer({ type }) {
   const [showExtras, setShowExtras] = useState(false);
   return (
-    <div className="character-main-cols">
+    <div>
       {type && (
         <div className="character-rows">
           <img src={type && typeInfo[type].img} alt={type} />
           <p>{type && typeInfo[type].description}</p>
-          <button onClick={() => setShowExtras(!showExtras)}>{showExtras ? "Hide extras" : "Show extras"}</button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setShowExtras(!showExtras);
+            }}
+          >
+            {showExtras ? "Hide extras" : "Show extras"}
+          </button>
         </div>
       )}{" "}
       {showExtras && (

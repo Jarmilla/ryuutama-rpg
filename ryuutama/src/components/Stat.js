@@ -14,26 +14,24 @@ const statImage = {
 
 function Stat({ isSaved, stat, statName, setStat, condition }) {
   return (
-    <div className="character-rows">
+    <div className="stat-container">
       <div>
-        <div>{statName.toUpperCase()}</div>
-        <div>
-          {isSaved ? (
-            <p>{stat}</p>
-          ) : (
-            <select name="dice" onClick={passTargetValueTo(setStat)}>
-              <option selected value={stat}>
-                {stat}
-              </option>
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-              {condition >= 10 ? <option value="10">10</option> : ""}
-              {condition >= 10 ? <option value="12">12</option> : ""}
-              {condition >= 10 ? <option value="20">20</option> : ""}
-            </select>
-          )}
-        </div>
+        <h3>{statName.toUpperCase()}</h3>
+        {isSaved ? (
+          <p>{stat}</p>
+        ) : (
+          <select name="dice" onClick={passTargetValueTo(setStat)}>
+            <option selected value={stat}>
+              {stat}
+            </option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            {condition >= 10 ? <option value="10">10</option> : ""} {/* will rearranging when adding Levels */}
+            {condition >= 10 ? <option value="12">12</option> : ""}
+            {condition >= 10 ? <option value="20">20</option> : ""}
+          </select>
+        )}
       </div>
       <img src={statImage[statName]} alt={statName} />
     </div>

@@ -5,14 +5,14 @@ function ClassInfoDisplayer({ skill }) {
   return (
     <div>
       {skill && (
-        <div className="character-main-cols">
+        <div className="character-cols">
           <div className="character-rows">
             <h3 className="equally-trisect-flexed">{skill.name}</h3>
             <p className="equally-trisect-flexed">{skill.statsUsed}</p>
             <p className="equally-trisect-flexed">{skill.targetNumber}</p>
           </div>
           <div className="character-rows">
-            <p className="sixth-flexed">{skill.effect}</p>
+            <p className="skill-usable">{skill.effect}</p>
             {skill.usableCircumstances && (
               <button
                 onClick={(e) => {
