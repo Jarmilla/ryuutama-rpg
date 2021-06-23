@@ -4,7 +4,7 @@ import RyuutamaCharacterSheet from "./components/RyuutamaCharacterSheet";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <RyuutamaCharacterSheet />
     </div>
   );

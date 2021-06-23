@@ -8,7 +8,7 @@ import hp from "../img/hp.png";
 import mana from "../img/mana.png";
 import fumbles from "../img/fumbles.png";
 
-function DiceSection({ isSaved, str, setStr, dex, setDex, int, setInt, spt, setSpt, fumble, setFumble }) {
+function DiceSection({ isSaved, setIsSaved, str, setStr, dex, setDex, int, setInt, spt, setSpt, fumble, setFumble }) {
   const [condition, setCondition] = useState(null);
 
   return (
@@ -68,22 +68,18 @@ function DiceSection({ isSaved, str, setStr, dex, setDex, int, setInt, spt, setS
           <h2>Special Rolls</h2>
           <div className="input-area wide">
             <p>Fumble Points</p>
-            <img src={fumbles} alt="fumbles" /> {}
-            {isSaved ? (
-              <h3>{fumble}</h3>
-            ) : (
-              <div className="input-area narrow">
-                <h3>{fumble}</h3>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setFumble(fumble - 1);
-                  }}
-                >
-                  -
-                </button>
-              </div>
-            )}
+            <img src={fumbles} alt="fumbles" />
+
+            <h3>{fumble}</h3>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setFumble(fumble - 1);
+                setIsSaved(!isSaved);
+              }}
+            >
+              -
+            </button>
           </div>
 
           <RollCheck checkTitle={"Initiative [DEX + INT]"} dice1={dex} dice2={int} fumble={fumble} setFumble={setFumble} />

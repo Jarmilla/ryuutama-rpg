@@ -6,9 +6,9 @@ function TypeInfoDisplayer({ type }) {
   return (
     <div>
       {type && (
-        <div className="character-rows">
-          <img src={type && typeInfo[type].img} alt={type} />
+        <div className="trisect-flexed">
           <p>{type && typeInfo[type].description}</p>
+          <img src={type && typeInfo[type].img} alt={type} />
           <button
             onClick={(e) => {
               e.preventDefault();

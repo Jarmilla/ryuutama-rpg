@@ -5,10 +5,10 @@ import { classes } from "../datas/classInfo";
 function ClassSkills({ class1 }) {
   return (
     <div className="character-sheet">
-      <div className="character-rows">
-        <h2 className="equally-trisect-flexed">Class Skill</h2>
-        <h2 className="equally-trisect-flexed">Stats Used</h2>
-        <h2 className="equally-trisect-flexed">Target Number</h2>
+      <div className="trisect-flexed">
+        <h2>Class Skill</h2>
+        <h2>Stats Used</h2>
+        <h2>Target Number</h2>
       </div>
       {class1 && <ClassInfoDisplayer skill={classes[class1].skills[0]} />}
       {class1 && <ClassInfoDisplayer skill={classes[class1].skills[1]} />}

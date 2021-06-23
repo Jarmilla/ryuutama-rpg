@@ -75,53 +75,8 @@ function RyuutamaCharacterSheet() {
   }
 
   return (
-    <div>
-      <Header isSaved={isSaved} ryubito={ryubito} setRyubito={setRyubito} creationDate={creationDate} setCreationDate={setCreationDate} class1={class1} />
-      <form>
-        <BaseInfo
-          isSaved={isSaved}
-          charName={charName}
-          setCharName={setCharName}
-          playerName={playerName}
-          setPlayerName={setPlayerName}
-          sex={sex}
-          setSex={setSex}
-          exp={exp}
-          setExp={setExp}
-          age={age}
-          setAge={setAge}
-          class1={class1}
-          setClass1={setClass1}
-          type1={type1}
-          setType1={setType1}
-          class2={class2}
-          setClass2={setClass2}
-          type2={type2}
-          setType2={setType2}
-          onChange={console.log(class1, type1)}
-        />
-
-        <ClassSkills class1={class1} />
-        {/* if u reched certain level <ClassSkills class2={class2} /> */}
-
-        <div className="character-sheet">
-          <PersonalGoals isSaved={isSaved} title="Reason to travel: " value={reasonToTravel} setValue={setReasonToTravel} />
-          <PersonalGoals isSaved={isSaved} title="Personal item: " value={personalItem} setValue={setPersonalItem} />
-        </div>
-
-        <DiceSection
-          isSaved={isSaved}
-          str={str}
-          setStr={setStr}
-          dex={dex}
-          setDex={setDex}
-          int={int}
-          setInt={setInt}
-          spt={spt}
-          setSpt={setSpt}
-          fumble={fumble}
-          setFumble={setFumble}
-        />
+    <div className="App">
+      <div className="edti-panel">
         <button
           type="submit"
           disabled={!isSaved}
@@ -144,7 +99,57 @@ function RyuutamaCharacterSheet() {
         >
           Load
         </button>
-      </form>
+      </div>
+      <main>
+        <Header isSaved={isSaved} ryubito={ryubito} setRyubito={setRyubito} creationDate={creationDate} setCreationDate={setCreationDate} class1={class1} />
+        <form>
+          <BaseInfo
+            isSaved={isSaved}
+            charName={charName}
+            setCharName={setCharName}
+            playerName={playerName}
+            setPlayerName={setPlayerName}
+            sex={sex}
+            setSex={setSex}
+            exp={exp}
+            setExp={setExp}
+            age={age}
+            setAge={setAge}
+            class1={class1}
+            setClass1={setClass1}
+            type1={type1}
+            setType1={setType1}
+            class2={class2}
+            setClass2={setClass2}
+            type2={type2}
+            setType2={setType2}
+            onChange={console.log(class1, type1)}
+          />
+
+          <ClassSkills class1={class1} />
+          {/* if u reched certain level <ClassSkills class2={class2} /> */}
+
+          <div className="character-sheet">
+            <PersonalGoals isSaved={isSaved} title="Reason to travel: " value={reasonToTravel} setValue={setReasonToTravel} />
+            <PersonalGoals isSaved={isSaved} title="Personal item: " value={personalItem} setValue={setPersonalItem} />
+          </div>
+
+          <DiceSection
+            isSaved={isSaved}
+            setIsSaved={setIsSaved}
+            str={str}
+            setStr={setStr}
+            dex={dex}
+            setDex={setDex}
+            int={int}
+            setInt={setInt}
+            spt={spt}
+            setSpt={setSpt}
+            fumble={fumble}
+            setFumble={setFumble}
+          />
+        </form>
+      </main>
     </div>
   );
 }

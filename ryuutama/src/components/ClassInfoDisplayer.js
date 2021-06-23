@@ -6,10 +6,10 @@ function ClassInfoDisplayer({ skill }) {
     <div>
       {skill && (
         <div className="character-cols">
-          <div className="character-rows">
-            <h3 className="equally-trisect-flexed">{skill.name}</h3>
-            <p className="equally-trisect-flexed">{skill.statsUsed}</p>
-            <p className="equally-trisect-flexed">{skill.targetNumber}</p>
+          <div className="trisect-flexed">
+            <h3>{skill.name}</h3>
+            <p>{skill.statsUsed}</p>
+            <p>{skill.targetNumber}</p>
           </div>
           <div className="character-rows">
             <p className="skill-usable">{skill.effect}</p>
