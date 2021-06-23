@@ -76,7 +76,7 @@ function RyuutamaCharacterSheet() {
 
   return (
     <div className="App">
-      <div className="edti-panel">
+      <div className="edit-panel">
         <button
           type="submit"
           disabled={!isSaved}
