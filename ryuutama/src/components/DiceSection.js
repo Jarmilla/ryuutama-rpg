@@ -74,8 +74,9 @@ function DiceSection({ isSaved, setIsSaved, str, setStr, dex, setDex, int, setIn
             <button
               onClick={(e) => {
                 e.preventDefault();
+                if (fumble === 0) return;
                 setFumble(fumble - 1);
-                setIsSaved(!isSaved);
+                setIsSaved(false);
               }}
             >
               -
