@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ryuutama-rpg/static/css/main.9d90936c.chunk.css",
-    "main.js": "/ryuutama-rpg/static/js/main.beee5f37.chunk.js",
-    "main.js.map": "/ryuutama-rpg/static/js/main.beee5f37.chunk.js.map",
+    "main.css": "/ryuutama-rpg/static/css/main.5dd292c8.chunk.css",
+    "main.js": "/ryuutama-rpg/static/js/main.03b7ad22.chunk.js",
+    "main.js.map": "/ryuutama-rpg/static/js/main.03b7ad22.chunk.js.map",
     "runtime-main.js": "/ryuutama-rpg/static/js/runtime-main.27856f2b.js",
     "runtime-main.js.map": "/ryuutama-rpg/static/js/runtime-main.27856f2b.js.map",
     "static/js/2.a3e2cdf2.chunk.js": "/ryuutama-rpg/static/js/2.a3e2cdf2.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.a080a26f.chunk.js": "/ryuutama-rpg/static/js/3.a080a26f.chunk.js",
     "static/js/3.a080a26f.chunk.js.map": "/ryuutama-rpg/static/js/3.a080a26f.chunk.js.map",
     "index.html": "/ryuutama-rpg/index.html",
-    "static/css/main.9d90936c.chunk.css.map": "/ryuutama-rpg/static/css/main.9d90936c.chunk.css.map",
+    "static/css/main.5dd292c8.chunk.css.map": "/ryuutama-rpg/static/css/main.5dd292c8.chunk.css.map",
     "static/js/2.a3e2cdf2.chunk.js.LICENSE.txt": "/ryuutama-rpg/static/js/2.a3e2cdf2.chunk.js.LICENSE.txt",
     "static/media/artisan.8c6bb8cb.png": "/ryuutama-rpg/static/media/artisan.8c6bb8cb.png",
     "static/media/farmer.981660c7.png": "/ryuutama-rpg/static/media/farmer.981660c7.png",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.27856f2b.js",
     "static/js/2.a3e2cdf2.chunk.js",
-    "static/css/main.9d90936c.chunk.css",
-    "static/js/main.beee5f37.chunk.js"
+    "static/css/main.5dd292c8.chunk.css",
+    "static/js/main.03b7ad22.chunk.js"
   ]
 }
