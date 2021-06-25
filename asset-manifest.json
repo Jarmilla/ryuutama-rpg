@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/ryuutama-rpg/static/css/main.9d90936c.chunk.css",
+    "main.js": "/ryuutama-rpg/static/js/main.beee5f37.chunk.js",
+    "main.js.map": "/ryuutama-rpg/static/js/main.beee5f37.chunk.js.map",
+    "runtime-main.js": "/ryuutama-rpg/static/js/runtime-main.27856f2b.js",
+    "runtime-main.js.map": "/ryuutama-rpg/static/js/runtime-main.27856f2b.js.map",
+    "static/js/2.a3e2cdf2.chunk.js": "/ryuutama-rpg/static/js/2.a3e2cdf2.chunk.js",
+    "static/js/2.a3e2cdf2.chunk.js.map": "/ryuutama-rpg/static/js/2.a3e2cdf2.chunk.js.map",
+    "static/js/3.a080a26f.chunk.js": "/ryuutama-rpg/static/js/3.a080a26f.chunk.js",
+    "static/js/3.a080a26f.chunk.js.map": "/ryuutama-rpg/static/js/3.a080a26f.chunk.js.map",
+    "index.html": "/ryuutama-rpg/index.html",
+    "static/css/main.9d90936c.chunk.css.map": "/ryuutama-rpg/static/css/main.9d90936c.chunk.css.map",
+    "static/js/2.a3e2cdf2.chunk.js.LICENSE.txt": "/ryuutama-rpg/static/js/2.a3e2cdf2.chunk.js.LICENSE.txt",
+    "static/media/artisan.8c6bb8cb.png": "/ryuutama-rpg/static/media/artisan.8c6bb8cb.png",
+    "static/media/farmer.981660c7.png": "/ryuutama-rpg/static/media/farmer.981660c7.png",
+    "static/media/healer.dc1c831d.png": "/ryuutama-rpg/static/media/healer.dc1c831d.png",
+    "static/media/hunter.4d337f1c.png": "/ryuutama-rpg/static/media/hunter.4d337f1c.png",
+    "static/media/merchant.eed35a78.png": "/ryuutama-rpg/static/media/merchant.eed35a78.png",
+    "static/media/minstrel.d170da98.png": "/ryuutama-rpg/static/media/minstrel.d170da98.png",
+    "static/media/noble.65f8260b.png": "/ryuutama-rpg/static/media/noble.65f8260b.png",
+    "static/media/title.8b7badbe.png": "/ryuutama-rpg/static/media/title.8b7badbe.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.27856f2b.js",
+    "static/js/2.a3e2cdf2.chunk.js",
+    "static/css/main.9d90936c.chunk.css",
+    "static/js/main.beee5f37.chunk.js"
+  ]
+}
