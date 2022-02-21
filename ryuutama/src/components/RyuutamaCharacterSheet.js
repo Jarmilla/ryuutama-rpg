@@ -78,6 +78,7 @@ function RyuutamaCharacterSheet() {
   return (
     <div className="App">
       <div className="edit-panel">
+
         <button
           type="submit"
           disabled={!isSaved}
@@ -88,9 +89,14 @@ function RyuutamaCharacterSheet() {
         >
           Edit
         </button>
-        <button type="submit" disabled={isSaved} onClick={saveToLocalStorage}>
+
+        <button 
+          type="submit" 
+          disabled={isSaved} 
+          onClick={saveToLocalStorage}>
           Save
         </button>
+
         <button
           type="submit"
           onClick={(e) => {
@@ -101,8 +107,10 @@ function RyuutamaCharacterSheet() {
           Load
         </button>
       </div>
+
       <main>
         <Header isSaved={isSaved} ryubito={ryubito} setRyubito={setRyubito} creationDate={creationDate} setCreationDate={setCreationDate} class1={class1} />
+        
         <form>
           <BaseInfo
             isSaved={isSaved}
@@ -124,11 +132,10 @@ function RyuutamaCharacterSheet() {
             setClass2={setClass2}
             type2={type2}
             setType2={setType2}
-            onChange={console.log(class1, type1)}
           />
 
-          <ClassSkills class1={class1} />
-          {/* if u reched certain level <ClassSkills class2={class2} /> */}
+          <ClassSkills showClassSkills={class1} />
+          { exp >= 2000 ? <ClassSkills showClassSkills={class2} /> : "" }
 
           <div className="character-sheet">
             <PersonalGoals isSaved={isSaved} title="Reason to travel: " value={reasonToTravel} setValue={setReasonToTravel} />
