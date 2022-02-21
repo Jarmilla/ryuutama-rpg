@@ -3,6 +3,7 @@ import passTargetValueTo from "../utility/passTargetValueTo";
 import ClassChooser from "./ClassChooser";
 import TypeChooser from "./TypeChooser";
 import TypeInfoDisplayer from "./TypeInfoDisplayer";
+import {levelUpChar} from "../utility/levelUpChar"
 
 function BaseInfo({
   isSaved,
@@ -42,7 +43,7 @@ function BaseInfo({
       <div className="character-rows">
         <div className="input-area">
           <h2>Level:</h2>
-          <p>ToDo!</p> {/* kiszámoli az exp-ből */}
+          <p>{levelUpChar(exp)}</p>
           <h2>EXP: </h2>
           {isSaved ? <p>{exp}</p> : <input type="number" value={exp} required onChange={passTargetValueTo(setExp)} />}
         </div>
@@ -67,17 +68,19 @@ function BaseInfo({
           <h2>Class:</h2>
           {isSaved ? <p>{class1}</p> : <ClassChooser setClass={setClass1} />}
           <p> / </p>
-          <p>2nd Class</p> {/*  ha elért x levelre Show <ClassChooser setClass={setClass2} /> */}
+          { exp >= 2000 ? <ClassChooser setClass={setClass2} /> : <p>2nd Class</p>  }
+       
         </div>
         <div className="input-area">
           <h2>Type:</h2>
           {isSaved ? <p>{type1}</p> : <TypeChooser setType={setType1} />}
           <p> / </p>
-          <p>2nd Type</p> {/*  ha elért x levelre Show TypeChooser setType={setType2} /> */}
+          { exp >= 3000 ? <TypeChooser setType={setType2} /> :  <p>2nd Type</p>  }
         </div>
       </div>
 
       <TypeInfoDisplayer type={type1} />
+      { exp >= 3000 ? <TypeInfoDisplayer type={type2} /> : ""  }
       {/*  ha elért x levelre Show <TypeInfoDisplayer type={type2} /> */}
     </div>
   );
