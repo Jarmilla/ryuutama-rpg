@@ -56,6 +56,7 @@ function RyuutamaCharacterSheet() {
   function loadFromLocalStorage(e) {
     e.preventDefault();
     let loadedData = JSON.parse(localStorage.getItem("character"));
+    if (loadedData === null) return
     setRyubito(loadedData.ryubito);
     setCreationDate(loadedData.creationDate);
     setCharName(loadedData.charName);
